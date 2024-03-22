@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Perran Group</title>
+        <style>
+            button {
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perran Group</title>
+    <link rel="stylesheet" href="styles.css"> <!-- You can link to an external CSS file for styling -->
+</head>
+<body>
+    <header>
+        <h1>PG | Perran Group</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Perran Group, we are a team of experienced consultants dedicated to helping businesses thrive. With our expertise in consulting with brands in every continent, we provide tailored solutions to drive your success in any given market. Our website is basic html code as our creative strategy is primarily reserved for our clients.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li><b> Ad Management </b> (Meta, TikTok, Google/YT, LinkedIn & more)</li>
+            <li><b> Marketing Consulting </b> (Content Strategy, Advertising Campaigns, Strategic Planning, & more)</li>
+            <li><b> UX Designer </b> (A/B Testing, User Journey Mapping, User Stories, etc)</li>
+            <li><b> Product & Project Management </b> (Waterfall, Agile, Scrum, Kanban & more)</li>
+        </ul>
+    </section>
+
+    <section id="clients">
+        <h2>Clients Served</h2>
+        <ul>
+            <li><b> NBA </b> </li>
+            <li><b> NFL </b> </li>
+            <li><b> UFC </b> </li>
+            <li><b> LaLiga </b> </li>
+            <li><b> Flow Blockchain </b> </li>
+            <li><b> Dapper Labs </b> </li>
+            <li><b> Disney </b> </li>
+            <li><b> PennyFly Entertainment </b> </li>
+            <li><b> UnlockAI </b> </li>
+            <li><b> Surrey Board of Trade </b> </li>
+            <li><b> World Trade Centre of Vancouver </b> </li>
+            <li><b> BC Ferries </b> </li>
+            <li><b> Jacob Bros Construction </b> </li>
+            <li><b> Vac-Force Services </b> </li>
+            <li><b> Inner Circle Management </b> </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any other questions or would like to inquire further about services, please don't hesitate to contact us:</p>
+        <address>
+            Email: perrangroup (at) gmail.com
+            Phone: <a href="tel:+1234567890">coming soon</a>
+        </address>
+    </section>
+</body>
+<body>
+    <h2>You may be thinking, "it's a simple HTML site"... </h2>
+    <p>It is, but with cool features! 👇</p>
+    <button id="funButton" onclick="changeBackgroundColor()">Explore PG's Brand Colors!</button>
+
+    <script>
+        function changeBackgroundColor() {
+            const colors = ["#344E41", "#3A5A40", "#588157", "#A3B18A", "#DAD7CD" ];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+<body>
+    <h3>Guess the Number Game</h3>
+    <p>Guess any number between 1 and 100. Your attempts will be recorded and displayed once you have guessed the correct number.</p>
+    <input type="number" id="guessInput">
+    <button onclick="checkGuess()">Try Guess</button>
+    <p id="message"></p>
+
+    <script>
+        // Generate a random number between 1 and 100
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guessInput').value);
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                document.getElementById('message').textContent = 'Please enter a valid number between 1 and 100.';
+            } else {
+                attempts++;
+                if (guess === randomNumber) {
+                    document.getElementById('message').textContent = `Congratulations! You guessed the number in ${attempts} attempts.`;
+                    document.getElementById('message').style.color = '#27ae60';
+                    document.getElementById('guessInput').disabled = true;
+                } else {
+                    const message = guess < randomNumber ? 'Too low. Try again.' : 'Too high. Try again.';
+                    document.getElementById('message').textContent = message;
+                    document.getElementById('message').style.color = '#e74c3c';
+                }
+            }
+        }
+    </script>
+</body>
+<footer>
+    <p>&copy; 2024 Perran Group. All rights reserved.</p>
+</footer>
+</html>
